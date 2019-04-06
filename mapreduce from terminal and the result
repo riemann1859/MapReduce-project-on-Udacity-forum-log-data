@@ -1,0 +1,127 @@
+First check the combination of mapper, combiner and reducer on a small part of the data:
+
+[maria_dev@sandbox-hdp some_map_reduce_codes]$ cat forum_node.tsv |  head -10001 |./mapper_student_posting_hour.py | ./combiner_student_posting_hour.py |./reducer_stude
+nt_busiest_hour.py
+
+
+
+After being sure of the codes, 
+
+
+
+
+[maria_dev@sandbox-hdp some_map_reduce_codes]$ hadoop jar /usr/hdp/2.6.5.0-292/hadoop-mapreduce/hadoop-streaming-2.7.3.2.6.5.0-292.jar \
+                                               -file /home/maria_dev/some_map_reduce_codes/mapper_student_posting_hour.py \
+                                               -mapper "python mapper_student_posting_hour.py" \
+                                               -file /home/maria_dev/some_map_reduce_codes/combiner_student_posting_hour.py \
+                                               -combiner "python combiner_student_posting_hour.py" \
+                                               -file /home/maria_dev/some_map_reduce_codes/reducer_student_busiest_hour.py  \
+                                               -reducer "python reducer_student_busiest_hour.py"  \
+                                               -input /user/maria_dev/udacity_forum_data/forum_node.tsv  \
+                                               -output busiest_hour_of_each_student  
+                                               
+See a small part of the result:
+
+  
+[maria_dev@sandbox-hdp some_map_reduce_codes]$ hadoop fs -cat busiest_hour_of_each_student/part-00000 | head -100  
+
+100017779       2
+100094191       11
+100020153       2
+100020153       13                                                                                                                                                      
+100020155       9                                                                                                                                                       
+100020487       15                                                                                                                                                      
+100002601       0                                                                                                                                                       
+100020481       12                                                                                                                                                      
+100008491       15                                                                                                                                                      
+100007395       21                                                                                                                                                      
+100007394       19                                                                                                                                                      
+100007397       0                                                                                                                                                       
+100007397       22                                                                                                                                                      
+100007396       17                                                                                                                                                      
+100024819       17                                                                                                                                                      
+100007390       3                                                                                                                                                       
+100007390       4                                                                                                                                                       
+100007393       2                                                                                                                                                       
+100007392       17                                                                                                                                                      
+100016551       23                                                                                                                                                      
+100008497       12                                                                                                                                                      
+100007399       3                                                                                                                                                       
+100007399       11                                                                                                                                                      
+100007398       11                                                                                                                                                      
+100016557       2                                                                                                                                                       
+100016556       4                                                                                                                                                       
+100003557       6                                                                                                                                                       
+100003555       11                                                                                                                                                      
+100003554       1                                                                                                                                                       
+100003553       10                                                                                                                                                      
+100003552       7                                                                                                                                                       
+100003552       19                                                                                                                                                      
+100003551       3                                                                                                                                                       
+100003551       4                                                                                                                                                       
+100003551       5                                                                                                                                                       
+100003550       3                                                                                                                                                       
+100023287       9                                                                                                                                                       
+100023286       19                                                                                                                                                      
+100023286       20                                                                                                                                                      
+100003559       6                                                                                                                                                       
+100003558       4                                                                                                                                                       
+100003558       5                                                                                                                                                       
+100003558       6                                                                                                                                                       
+100027108       20                                                                                                                                                      
+100090302       6                                                                                                                                                       
+100020736       22                                                                                                                                                      
+100027106       10                                                                                                                                                      
+100027106       11                                                                                                                                                      
+100073923       11                                                                                                                                                      
+100073923       15                                                                                                                                                      
+100073923       20                                                                                                                                                      
+100027105       2                                                                                                                                                       
+100007029       5                                                                                                                                                       
+100007028       17                                                                                                                                                      
+100007023       9                                                                                                                                                       
+100007023       10                                                                                                                                                      
+100007022       5                                                                                                                                                       
+100007021       6                                                                                                                                                       
+100007021       9                                                                                                                                                       
+100007021       16                                                                                                                                                      
+100007021       17                                                                                                                                                      
+100007020       6                                                                                                                                                       
+100007020       16                                                                                                                                                      
+100059994       21                                                                                                                                                      
+100059995       4                                                                                                                                                       
+100059995       8                                                                                                                                                       
+100059995       9                                                                                                                                                       
+100059995       20                                                                                                                                                      
+100059995       21                                                                                                                                                      
+100059995       22                                                                                                                                                      
+100007025       7                                                                                                                                                       
+100093975       12                                                                                                                                                      
+100003739       18                                                                                                                                                      
+100003738       16                                                                                                                                                      
+100003738       17                                                                                                                                                      
+100035013       19                                                                                                                                                      
+100067531       9                                                                                                                                                       
+100067531       13                                                                                                                                                      
+100067531       16                                                                                                                                                      
+100067531       21                                                                                                                                                      
+100067531       22                                                                                                                                                      
+100067531       23                                                                                                                                                      
+100067530       10                                                                                                                                                      
+100067530       16                                                                                                                                                      
+100003733       1                                                                                                                                                       
+100003732       13                                                                                                                                                      
+100119299       4                                                                                                                                                       
+100003730       3                                                                                                                                                       
+100003737       1                                                                                                                                                       
+100003737       2                                                                                                                                                       
+100003737       4                                                                                                                                                       
+100003737       6                                                                                                                                                       
+100003737       12                                                                                                                                                      
+100003737       14                                                                                                                                                      
+100003737       20                                                                                                                                                      
+100003737       21                                                                                                                                                      
+100003736       13                                                                                                                                                      
+100003735       23                                                                                                                                                      
+100003734       15                                                                                                                                                      
+100079382       9 
