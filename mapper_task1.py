@@ -3,7 +3,11 @@
 import sys                                                                                                                                                              
 import csv                                                                                                                                                              
 from datetime import datetime                                                                                                                                           
-reader=csv.reader(sys.stdin, delimiter='\t',quotechar='"')                                                                                                              
+reader=csv.reader(sys.stdin, delimiter='\t',quotechar='"')    
+
+# data has 19 features
+# some features contain \n character 
+# the standard expression 'for line in sys.stdin' leads to problems
 next(reader)                                                                                                                                                            
                                                                                                                                                                         
 for line in reader:                                                                                                                                                     
