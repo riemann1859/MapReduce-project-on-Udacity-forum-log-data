@@ -25,3 +25,4 @@ filtered = FILTER combined BY count_ == max_;
 filtered_selected_columns = FOREACH filtered GENERATE Hour_count::student, Hour_count::HOUR, max_hour::max_; 
 
 DUMP filtered_selected_columns;
+ 
