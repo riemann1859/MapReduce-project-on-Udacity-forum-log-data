@@ -36,3 +36,6 @@ The second table is "forum_users.tsv". It contains fields for "user_ptr_id" - th
     come from all around the world, so we need to know both at what times of day the activity is the highest, and to know which of 
     the students are active at that time.\
 2.) Is there a correlation between the length of a post and the length of answers?
+3.) We are interested seeing what are the top tags used in posts. Write a mapreduce program and Pig script  that would output 
+    Top 10 tags, ordered by the number of questions they appear in.
+
