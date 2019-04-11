@@ -17,4 +17,6 @@ number_of_tag = FOREACH grouped GENERATE group AS tag, COUNT(flattened) AS count
 
 ordered = ORDER number_of_tag BY count_ DESC, tag;
 
-DUMP ordered;
+limited = LIMIT ordered  10;
+
+DUMP limited;
