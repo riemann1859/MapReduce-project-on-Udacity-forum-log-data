@@ -39,3 +39,4 @@ The second table is "forum_users.tsv". It contains fields for "user_ptr_id" - th
 3.) We are interested seeing what are the top tags used in posts. Write a mapreduce program and Pig script  that would output 
     Top 10 tags, ordered by the number of questions they appear in.
 
+ 
