@@ -38,7 +38,7 @@ The second table is "forum_users.tsv". It contains fields for "user_ptr_id" - th
 2.) Is there a correlation between the length of a post and the length of answers?\
 3.) We are interested seeing what are the top tags used in posts. Write a mapreduce program and Pig script  that would output 
     Top 10 tags, ordered by the number of questions they appear in.\
-4.) Find  the most active students of the forum. Ts the number of posts, questions, answers or comments, a student sends to forum closely related to his or her reputation?\
+4.) Find  the most active students of the forum. Is the number of posts, questions, answers or comments, sent by a student to forum closely related to his or her reputation?\
 5.) Find the busiest hour, day of the forum.
 
  
