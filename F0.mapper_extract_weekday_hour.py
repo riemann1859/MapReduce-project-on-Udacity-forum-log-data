@@ -18,3 +18,4 @@ for line in reader:
         print("{x}w\t1".format(x=date.weekday()))                                                                                                                       
         print("{y}h\t1".format(y=date.hour))                                                                                                                            
                                                
+ 
