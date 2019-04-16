@@ -40,6 +40,7 @@ The second table is "forum_users.tsv". It contains fields for "user_ptr_id" - th
     Top 10 tags, ordered by the number of questions they appear in.\
 4.) Find  the most active students of the forum. Is the number of posts, questions, answers or comments, sent by a student to forum closely related to his or her reputation?\
 5.) Find the busiest day hour, week day of the forum in average.\
-6.) Find the average waiting time for an answer  in the forum.
+6.) Is there any question without an answer? Find the number of answers to each questions.\
+7.) Find the average waiting time for an answer  in the forum.
 
  
