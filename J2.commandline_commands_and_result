@@ -1,0 +1,113 @@
+[maria_dev@sandbox-hdp some_map_reduce_codes]$ hadoop jar /usr/hdp/2.6.5.0-292/hadoop-mapreduce/hadoop-streaming-2.7.3.2.6.5.0-292.jar \
+                                              -file /home/maria_dev/some_map_reduce_codes/mapper_question_and_abs_parent_ids.py \ 
+                                              -mapper "python mapper_question_and_abs_parent_ids.py"  \
+                                              -file /home/maria_dev/some_map_reduce_codes/reducer_number_of_participations_to_a_question.py \
+                                              -reducer "python reducer_number_of_participations_to_a_question.py" \
+                                              -input /user/maria_dev/udacity_forum_data/forum_node.tsv  \
+                                              -output number_of_participations_to_each_question
+
+
+[maria_dev@sandbox-hdp some_map_reduce_codes]$ hadoop fs -cat number_of_participations_to_each_question/part-00000  | sort -k 2nr | head -100                           
+question_id  count
+6000697 645                                                                                                                                                             
+2000269 643                                                                                                                                                             
+11001437        551                                                                                                                                                     
+10000001        513                                                                                                                                                     
+9       471                                                                                                                                                             
+52159   441                                                                                                                                                             
+12002220        391                                                                                                                                                     
+1335    391                                                                                                                                                             
+61314   391                                                                                                                                                             
+8004289 361                                                                                                                                                             
+8002814 340                                                                                                                                                             
+43739   337                                                                                                                                                             
+1028639 311                                                                                                                                                             
+5000548 302                                                                                                                                                             
+8510    264                                                                                                                                                             
+66981   253                                                                                                                                                             
+1843    221                                                                                                                                                             
+10003317        197                                                                                                                                                     
+8000229 193                                                                                                                                                             
+1007700 187                                                                                                                                                             
+75      181                                                                                                                                                             
+987     181                                                                                                                                                             
+9000010 173                                                                                                                                                             
+2872    171                                                                                                                                                             
+30358   169                                                                                                                                                             
+2700    157                                                                                                                                                             
+1023961 153                                                                                                                                                             
+1019232 150                                                                                                                                                             
+1027401 150                                                                                                                                                             
+1023423 148                                                                                                                                                             
+2091    147                                                                                                                                                             
+5014564 143                                                                                                                                                             
+19746   142                                                                                                                                                             
+56259   140                                                                                                                                                             
+32928   137                                                                                                                                                             
+1013872 134                                                                                                                                                             
+24986   133                                                                                                                                                             
+1016640 132                                                                                                                                                             
+1016777 131                                                                                                                                                             
+35191   131                                                                                                                                                             
+49008   130                                                                                                                                                             
+1027440 129                                                                                                                                                             
+2003507 127                                                                                                                                                             
+1000318 122                                                                                                                                                             
+6024829 121                                                                                                                                                             
+8003506 120                                                                                                                                                             
+1028029 119                                                                                                                                                             
+5014325 117                                                                                                                                                             
+58123   117                                                                                                                                                             
+6000065 115                                                                                                                                                             
+4082    113                                                                                                                                                             
+9000050 112                                                                                                                                                             
+10000302        110                                                                                                                                                     
+6030550 110                                                                                                                                                             
+36189   108                                                                                                                                                             
+499     108                                                                                                                                                             
+2001852 107                                                                                                                                                             
+2118    107                                                                                                                                                             
+11000622        105                                                                                                                                                     
+24872   104                                                                                                                                                             
+9001731 104                                                                                                                                                             
+57100   103                                                                                                                                                             
+1030694 102                                                                                                                                                             
+24512   102                                                                                                                                                             
+10003568        100                                                                                                                                                     
+7000839 100                                                                                                                                                             
+6000932 99                                                                                                                                                              
+1013987 98                                                                                                                                                              
+2002452 96                                                                                                                                                              
+6002728 96                                                                                                                                                              
+1027298 95                                                                                                                                                              
+1019317 94                                                                                                                                                              
+12001170        94                                                                                                                                                      
+2016440 94                                                                                                                                                              
+6001020 94                                                                                                                                                              
+56719   93                                                                                                                                                              
+43368   92                                                                                                                                                              
+10000033        91                                                                                                                                                      
+1034839 91                                                                                                                                                              
+9000280 91                                                                                                                                                              
+6013157 90                                                                                                                                                              
+1001501 89                                                                                                                                                              
+2010786 89                                                                                                                                                              
+6003154 89                                                                                                                                                              
+6014061 89                                                                                                                                                              
+5004845 87                                                                                                                                                              
+6012600 87                                                                                                                                                              
+1001754 85                                                                                                                                                              
+2003118 85                                                                                                                                                              
+1008404 84                                                                                                                                                              
+1021772 84                                                                                                                                                              
+1023803 84                                                                                                                                                              
+65152   84                                                                                                                                                              
+1033671 83                                                                                                                                                              
+10000461        82                                                                                                                                                      
+1031826 82                                                                                                                                                              
+7916    82                                                                                                                                                              
+10001791        81                                                                                                                                                      
+39226   80                                                                                                                                                              
+4946    80                                                                                                                                                              
+                                                                                                                        
+ 
