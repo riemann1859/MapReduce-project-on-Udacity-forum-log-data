@@ -1,6 +1,6 @@
 #!/usr/bin/env python                                                                                                                                                       
                                                                                                                                                                         
-import sys, csv, string                                                                                                                                                 
+import sys, csv                                                                                                                                            
                                                                                                                                                                         
 reader = csv.reader(sys.stdin, delimiter = '\t', quotechar='"')                                                                                                         
 reader.next()                                                                                                                                                           
